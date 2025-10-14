@@ -1,16 +1,15 @@
 import React from 'react'
 
-interface WindowCardProps {
-  title: string;
-  description: string;
-  image: string;
-}
 
-const WindowCard = ({ title, description, image }: WindowCardProps) => (
+
+const WindowCard = ({ data }: any) => (
+
+  
+ 
   <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
-    <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <img src={data?.cover?.url} className="w-full h-48 object-cover" />
     <div className='flex justify-between px-4 pt-2 items-center '>
-      <h3 className="font-semibold text-lg mb-2 text-[#1C3960]">{title}</h3>
+      <h3 className="font-semibold text-lg mb-2 text-[#1C3960]">{data?.header}</h3>
       
       <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +27,7 @@ const WindowCard = ({ title, description, image }: WindowCardProps) => (
 
         </div>
     <div className="p-4 text-left">
-      <p className="text-gray-600 text-sm">{description}</p>
+      <p className="text-gray-600 text-sm">{data?.textDescription}</p>
     </div>
   </div>
 );

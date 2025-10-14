@@ -1,7 +1,13 @@
+"use client";
+
+import React from "react";
 import FeatureCard from "./ui/FeatureCard";
 import { ShieldCheck, Thermometer, VolumeOff } from "lucide-react";
 
-const FeatureHighlights = () => {
+const FeatureHighlights = ({data}:any) => {
+
+  console.log(data,'featuredata');
+
   const features = [
     {
       icon: <VolumeOff className="w-6 h-6 text-[#20A69E]" />,
@@ -24,8 +30,8 @@ const FeatureHighlights = () => {
   return (
     <section className="py-16 bg-white w-full">
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 text-center">
-        {features.map((f) => (
-          <FeatureCard key={f.title} {...f} />
+        {data?.data?.CardGirdFeatures[0]?.FeatureCards.map((f:any) => (
+          <FeatureCard key={f?.heading} data={f} />
         ))}
       </div>
     </section>

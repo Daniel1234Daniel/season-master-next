@@ -1,6 +1,11 @@
+"use client";
+
+import React from "react";
 import WindowCard from "./ui/WindowCard";
 
-const WindowRange = () => {
+const WindowRange = ({data}:any) => {
+
+  console.log(data,'windowrange');
   const windows = [
     {
       title: "Fixed Panel",
@@ -43,14 +48,14 @@ const WindowRange = () => {
 
   return (
     <section className="py-16 bg-white w-full max-w-6xl text-start px-8">
-      <h2 className="text-3xl font-semibold mb-4 text-[#1C3960]">Explore Our Window Range</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-[#1C3960]">{data?.data?.WindowRangeGrid?.head}</h2>
       <p className="text-[#333333] text-start mb-8 max-w-[40rem]">
-      Designed for performance, precision, and aesthetics — whether you need complete windows or system components, we have a solution for every application.
-      </p>
+     {data?.data?.WindowRangeGrid?.description}
+       </p>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {windows.map((w,id) => (
-          <WindowCard key={id} {...w} />
+        {data?.data?.WindowRangeGrid?.WindowRangeGrid.map((w:any,id:any) => (
+          <WindowCard key={id} data={w} />
         ))}
       </div>
     </section>
