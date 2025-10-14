@@ -6,7 +6,7 @@ const Regulation = () => {
       style={{ backgroundImage: "url('/backCoverMid.png')" }} 
     >
      
-      <div className="max-w-[896px] rounded-[16px] bg-white/95 mx-auto text-center blur-[36] p-[28px]">
+      <div className="max-w-[896px] rounded-[16px] bg-white/94  mx-auto text-center blur-[70] p-[28px]">
        
         <h2 className="text-[48px] text-wrap  font-bold text-[#1C3960] mb-[24px] tracking-[-0.01em]">
           Tested. <span>Certified. </span>Safe.
@@ -23,7 +23,7 @@ const Regulation = () => {
      
           <div className="flex flex-col items-center">
           <img
-          src="/glazingImg.png" 
+          src="/frame-77.png" 
           alt="Service Areas Map"
           className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
         />
@@ -32,7 +32,21 @@ const Regulation = () => {
       
           <div className="flex flex-col items-center">
             <img
-          src="/glazingImg.png" 
+               src="/frame-78.png" 
+          alt="Service Areas Map"
+          className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
+        />
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+               src="/frame-79.png" 
+          alt="Service Areas Map"
+          className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
+        />
+          </div>
+              <div className="flex flex-col items-center">
+            <img
+               src="/frame-80.png" 
           alt="Service Areas Map"
           className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
         />
