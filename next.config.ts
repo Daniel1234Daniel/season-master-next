@@ -1,7 +1,33 @@
 import type { NextConfig } from "next";
 
+
 const nextConfig: NextConfig = {
-  /* config options here */
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**', 
+      },
+      {
+        protocol: 'http',
+        hostname: '**', 
+      },
+    ],
+    domains: [
+      "graphicsfamily.com",
+      "img.freepik.com",
+      "encrypted-tbn0.gstatic.com",
+      "as2.ftcdn.net",
+      "images-platform.99static.com",
+      "dypdvfcjkqkg2.cloudfront.net",
+    ],
+  },
+   experimental: {
+    serverActions: {
+      bodySizeLimit: '200mb',
+    },
+  },
 };
 
-export default nextConfig;
+export default nextConfig

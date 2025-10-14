@@ -106,7 +106,7 @@ const Testimonials = () => {
         </button>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mx-8">
-          {getVisibleReviews().map((r, i) => (
+          {getVisibleReviews().map((r:any, i:any) => (
             <div
               key={`${r.name}-${i}`}
               className="bg-[#EAF7FA] rounded-lg p-4 text-left flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"

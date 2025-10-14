@@ -1,21 +1,30 @@
+"use client";
+
+import React from "react";
+
 import RatingBadge from "./ui/RatingBadge";
 
-const HeroSection = () => {
+const HeroSection = ({data}:any) => {
+
+  const endPoint = process.env.NEXT_PUBLIC_API_BASE_FILE;
+  const backgroundImageUrl = data?.data?.heroimage?.url || ''
+  ? `url(${endPoint}${data?.data?.heroimage?.url})`
+  : 'none';
+
   return (
     <section
       className="relative w-full bg-gray-800 bg-center bg-cover bg-no-repeat text-center py-24 text-white"
-      style={{ backgroundImage: "url('/glazingImg.png')" }} 
+      style={{ backgroundImage: backgroundImageUrl }}
     >
       <div className="absolute inset-0 bg-black/50" /> 
 
       <div className="relative z-10 max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          UK’s Most Reliable Secondary Glazing Since 1970
+          {data?.data?.title || ""}
         </h1>
 
         <p className="max-w-2xl mx-auto text-gray-200 mb-8">
-          Season Master manufactures precision secondary glazing systems for
-          homeowners, architects, and trade professionals.
+          {data?.data?.description || ""}
         </p>
 
         <div className="flex flex-col md md:flex-row items-center justify-center gap-[8px]">
@@ -28,7 +37,7 @@ const HeroSection = () => {
         </div>
 
         <div className="mt-8 hidden md:block">
-          <RatingBadge rating={4.9} />
+          <RatingBadge rating={data?.data?.rating} />
         </div>
       </div>
     </section>
