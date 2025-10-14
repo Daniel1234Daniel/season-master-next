@@ -8,9 +8,9 @@ const HeroSection = ({data}:any) => {
 
   const endPoint = process.env.NEXT_PUBLIC_API_BASE_FILE;
   const backgroundImageUrl = data?.data?.heroimage?.url || ''
-  ? `url(${endPoint}${data?.data?.heroimage?.url})`
+  ? `url(${data?.data?.heroimage?.url})`
   : 'none';
-
+  console.log(data,'herosection');
   return (
     <section
       className="relative w-full bg-gray-800 bg-center bg-cover bg-no-repeat text-center py-24 text-white"

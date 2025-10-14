@@ -44,7 +44,7 @@ const WindowRange = () => {
   return (
     <section className="py-16 bg-white w-full max-w-6xl text-start px-8">
       <h2 className="text-3xl font-semibold mb-4 text-[#1C3960]">Explore Our Window Range</h2>
-      <p className="text-[#333333] text-start mb-8">
+      <p className="text-[#333333] text-start mb-8 max-w-[40rem]">
       Designed for performance, precision, and aesthetics — whether you need complete windows or system components, we have a solution for every application.
       </p>
 

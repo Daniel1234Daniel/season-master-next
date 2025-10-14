@@ -2,11 +2,11 @@ import React from 'react';
 
 const Regulation = () => {
   return (
-    <section className="relative w-full bg-gray-800  bg-center bg-cover bg-no-repeat py-[64px] px-4"
-      style={{ backgroundImage: "url('/glazingImg.png')" }} 
+    <section className="relative w-full bg-gray-800  bg-center bg-cover bg-no-repeat py-[90px] px-4"
+      style={{ backgroundImage: "url('/backCoverMid.png')" }} 
     >
      
-      <div className="max-w-[896px] rounded-[16px] bg-white/90 mx-auto text-center blur-[36] p-[48px]">
+      <div className="max-w-[896px] rounded-[16px] bg-white/95 mx-auto text-center blur-[36] p-[28px]">
        
         <h2 className="text-[48px] text-wrap  font-bold text-[#1C3960] mb-[24px] tracking-[-0.01em]">
           Tested. <span>Certified. </span>Safe.
@@ -19,13 +19,13 @@ const Regulation = () => {
           <div>European regulations.</div>
         </div>
 
-        <div className="flex justify-center items-start gap-[64px]">
+        <div className="flex justify-center items-start gap-[14px]">
      
           <div className="flex flex-col items-center">
           <img
           src="/glazingImg.png" 
           alt="Service Areas Map"
-          className="w-[160px] h-[100px] object-cover shadow-md rounded-md"
+          className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
         />
           </div>
 
@@ -34,7 +34,7 @@ const Regulation = () => {
             <img
           src="/glazingImg.png" 
           alt="Service Areas Map"
-          className="w-[160px] h-[100px] object-cover shadow-md rounded-md"
+          className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
         />
           </div>
         </div>

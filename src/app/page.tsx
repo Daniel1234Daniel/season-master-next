@@ -8,6 +8,8 @@ import {
   getHeroSection, 
  
 } from "@/actions/functions/api";
+import ShoppingAs from "@/components/ShoppingAs";
+import WhyChoose from "@/components/WhyChoose";
 
 async function fetchWithFallback(fetchFunction: () => Promise<any>, fallback: any = null) {
   try {
@@ -35,7 +37,9 @@ export default async function HomePage() {
       <ServiceAreas />
       <WindowRange  />
       <Regulation  />
-      <Testimonials  />
+      <ShoppingAs/>
+      <WhyChoose/>
+      <Testimonials/>
     </main>
   );
 }

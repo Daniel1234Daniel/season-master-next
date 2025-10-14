@@ -9,11 +9,6 @@ export const getHeroSection = async (
   limit: number = 10,
 ): Promise<any> => {
   const url = `${BASEURL}/hero-section?populate=heroimage`;
-
-
-
-
-
   const response = await fetch(url, {
     method: "GET",
     headers: {
