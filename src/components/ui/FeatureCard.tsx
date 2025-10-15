@@ -7,11 +7,11 @@ interface FeatureCardProps {
 }
 
 const FeatureCard = ({ data}: any) => (
-  console.log(data,'featurecard'),
+
   <div className="flex items-start flex-col p-6  bg-white">
     <div className="flex justify-center mb-4">
          <Image
-                    src={`${data?.icon?.url}`}
+                    src={`${data?.icon?.url} || ''}`}
                     alt="Customer"
                     width={600}
                     height={400}

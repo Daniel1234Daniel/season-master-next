@@ -10,7 +10,7 @@ const HeroSection = ({data}:any) => {
   const backgroundImageUrl = data?.data?.heroimage?.url || ''
   ? `url(${data?.data?.heroimage?.url})`
   : 'none';
-  console.log(data,'herosection');
+ 
   return (
     <section
       className="relative w-full bg-gray-800 bg-center bg-cover bg-no-repeat text-center py-24 text-white"
@@ -29,10 +29,12 @@ const HeroSection = ({data}:any) => {
 
         <div className="flex flex-col md md:flex-row items-center justify-center gap-[8px]">
           <span className="flex px-[40px] py-[16px] bg-[#0284A3] hover:bg-[#02485a] rounded-[8px] font-medium cursor-pointer">
-            Buy Ready-Made Windows
+           {data?.data?.buyContent || ""}
           </span>
           <span className="flex px-[40px] py-[16px] border-2 border-white text-white rounded-[8px] font-medium cursor-pointer">
-            Become a Season Master Fabricator
+           
+           {data?.data?.becomeFabricator || ""}
+        
           </span>
         </div>
 

@@ -1,56 +1,41 @@
 import React from 'react';
 
-const Regulation = () => {
+const Regulation = ({data}:any) => {
+
+
   return (
     <section className="relative w-full bg-gray-800  bg-center bg-cover bg-no-repeat py-[90px] px-4"
-      style={{ backgroundImage: "url('/backCoverMid.png')" }} 
+      style={{ backgroundImage: `url(${data?.data?.coverImage?.url}` }} 
     >
      
       <div className="max-w-[896px] rounded-[16px] bg-white/94  mx-auto text-center blur-[70] p-[28px]">
        
         <h2 className="text-[48px] text-wrap  font-bold text-[#1C3960] mb-[24px] tracking-[-0.01em]">
-          Tested. <span>Certified. </span>Safe.
+         {data?.data?.heading || '' }
         </h2>
         
       
         <div className="text-[18px] font-normal text-[#333333] mb-[48px] ">
-          <div className="mb-[4px]">Every pane is rigorously tested for impact resistance, thermal stress, and</div>
-          <div className="mb-[4px]">shatter performance ensuring complete compliance with British and</div>
-          <div>European regulations.</div>
+        {data?.data?.description || ''}
         </div>
 
-        <div className="flex justify-center items-start gap-[14px]">
-     
-          <div className="flex flex-col items-center">
-          <img
-          src="/frame-77.png" 
-          alt="Service Areas Map"
-          className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
-        />
-          </div>
+        <div className="flex justify-center overflow-x-auto items-start gap-[14px]">
+  {data?.data?.logoLists?.length > 0 ? (
+  data.data.logoLists.map((item: any, index: number) => (
+    <div key={index} className="flex flex-col items-center">
+      <img
+        src={item.logo?.url || ""}
+        alt="trusted company logo"
+        className="w-[140px] h-[80px] object-cover shadow-md rounded-md"
+      />
+    </div>
+  ))
+) : (
+  <div>No data available</div>
+)}
 
-      
-          <div className="flex flex-col items-center">
-            <img
-               src="/frame-78.png" 
-          alt="Service Areas Map"
-          className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
-        />
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-               src="/frame-79.png" 
-          alt="Service Areas Map"
-          className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
-        />
-          </div>
-              <div className="flex flex-col items-center">
-            <img
-               src="/frame-80.png" 
-          alt="Service Areas Map"
-          className="w-[160px] h-[80px] object-cover shadow-md rounded-md"
-        />
-          </div>
+
+         
         </div>
 
     

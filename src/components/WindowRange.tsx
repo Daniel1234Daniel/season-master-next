@@ -5,7 +5,6 @@ import WindowCard from "./ui/WindowCard";
 
 const WindowRange = ({data}:any) => {
 
-  console.log(data,'windowrange');
   const windows = [
     {
       title: "Fixed Panel",

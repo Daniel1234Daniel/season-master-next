@@ -1,12 +1,8 @@
 import RegionCard from "./ui/RegionCard";
 
 
-const ServiceAreas = () => {
-  const regions = [
-    { name: "North & Scotland", cities: ["Manchester", "Glasgow", "Edinburgh", "Newcastle", "Liverpool"] },
-    { name: "Midlands", cities: ["Birmingham", "Leicester", "Nottingham", "Coventry", "Derby"] },
-    { name: "South", cities: ["London", "Reading", "Luton", "Salisbury", "Sussex"] },
-  ];
+const ServiceAreas = ({data}:any) => {
+  
 
   return (
     <section className="flex items-center gap-[40px] flex-col md:flex-row mx-auto max-w-6xl  w-[100%] py-16 text-center px-8">
@@ -14,22 +10,22 @@ const ServiceAreas = () => {
     
     
     <div className="flex flex-start flex-col max-w-5xl mx-auto">
-      <h2 className="text-3xl font-semibold mb-4 text-[#1C3960] text-start">Area’s We Service</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-[#1C3960] text-start">{data?.data?.heading || ''}</h2>
       <p className="text-gray-600  mb-8 text-start">
-        We provide expert secondary glazing solutions nationwide, with local
-        installers ready to assist wherever you are.
+        {data?.data?.description || ''}
+     
       </p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-[40px]">
               <div className="flex flex-col gap-2">
-                <span className="text-[#1C3960] text-start font-bold text-[16px]">Nationwide Coverage</span>
-                  <p className="text-start text-[14px] text-[#333333]">From Scotland to the South Coast, we deliver everywhere in the UK</p>
+                <span className="text-[#1C3960] text-start font-bold text-[16px]">{data?.data?.nationWideTitle || ''}</span>
+                  <p className="text-start text-[14px] text-[#333333]">{data?.data?.nationWideDescription || ''}</p>
               </div>
 
                  <div className="flex flex-col gap-2">
-                <span className="text-[#1C3960] text-start font-bold text-[16px]">Local Installer Network</span>
-                  <p className="text-start text-[14px] text-[#333333]">Connect with trusted Season Master installers in your area</p>
+                <span className="text-[#1C3960] text-start font-bold text-[16px]">{data?.data?.localTitle || ''}</span>
+                  <p className="text-start text-[14px] text-[#333333]">{data?.data?.localDescription || ''}</p>
               </div>
         </div>
 
@@ -40,7 +36,7 @@ const ServiceAreas = () => {
                         <circle cx="12" cy="10" r="3"></circle>
                 </svg>
             </div>
-            <span>Find Installers Near You</span>
+            <span>{data?.data?.buttonText || ''}</span>
           
         </div>
 
@@ -100,7 +96,7 @@ const ServiceAreas = () => {
 
         <div className="flex flex-col w-[100%] md:w-[45%]">
  <img
-          src="/areaService.png" 
+          src={`${data?.data?.imageOfLocation?.url || ''}`}
           alt="Service Areas Map"
           className="w-full h-full object-cover"
         />

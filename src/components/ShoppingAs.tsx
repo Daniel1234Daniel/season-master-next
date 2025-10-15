@@ -2,15 +2,15 @@
 import Image from "next/image";
 import React from "react";
 
-const ShoppingAs = () => {
-
+const ShoppingAs = ({data}:any) => {
+ 
   const Card = ({ src, alt, tag, title, desc, buttonText }:any) => {
     const [imgSrc, setImgSrc] = React.useState(src);
 
     return (
       <div className="relative group rounded-2xl overflow-hidden shadow-lg w-full h-[200px] sm:h-[300px] md:h-[420px]">
         <Image
-          src={imgSrc || "/fallback.png"}
+          src={imgSrc || ""}
           alt={alt}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -45,32 +45,33 @@ const ShoppingAs = () => {
       
         <div className="text-start mb-10">
           <h2 className="text-3xl font-bold text-[#1C3960] mb-2">
-            Who Are You Shopping As?
+          {data?.data?.heading || '' }
           </h2>
           <p className="text-gray-600 text-start max-w-2xl">
-            Whether you’re improving your home or supplying to clients, Season
-            Master provides tailored solutions for every type of customer.
+            {data?.data?.description || '' }
           </p>
         </div>
 
      
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card
+          {data?.data?.ShoppingCardGrid?.length > 0 ? (
+            data?.data?.ShoppingCardGrid.map((item: any, index: number) => (
+              <div key={index}>
+                 <Card
             src="/glazingImg.png" 
             alt="Trader"
-            tag="Trader"
-            title="Grow Your Business with the Season Master System."
-            desc="Buy ready-made windows or system parts always in stock."
-            buttonText="For Traders & Installers →"
+            tag={item?.type || ""}
+            title={item?.description || ""}
+            desc={item?.subDescription || ""}
+            buttonText={item?.buttonText || ""}
           />
-          <Card
-            src="/glazingImg.png" 
-            alt="Customer"
-            tag="Customer"
-            title="Upgrade Your Home’s Warmth, Quiet & Security."
-            desc="Perfect for period properties, modern homes & listed buildings."
-            buttonText="Explore Windows →"
-          />
+                </div>
+             )
+            )
+          ):<div>No data available</div> 
+            
+            }
+      
         </div>
       </div>
     </section>
