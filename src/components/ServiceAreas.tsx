@@ -33,7 +33,7 @@ const ServiceAreas = () => {
               </div>
         </div>
 
-        <div className="flex items-center  max-w-[22rem] my-4 justify-center rounded-[8px] gap-2 bg-[#0284A3] px-[40px] py-[16px]">
+        <div className="flex items-center  max-w-full md:max-w-[22rem] my-4 justify-center rounded-[8px] gap-2 bg-[#0284A3] px-[40px] py-[14px]">
             <div className="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"></path>
