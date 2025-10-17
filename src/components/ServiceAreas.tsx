@@ -5,7 +5,7 @@ const ServiceAreas = ({data}:any) => {
   
 
   return (
-    <section className="flex items-center gap-[40px] flex-col md:flex-row mx-auto max-w-6xl  w-[100%] py-16 text-center px-8">
+    <section className="flex items-center gap-[40px] flex-col md:flex-row mx-auto max-w-6xl  w-[100%] py-4 text-center px-8">
         <div className="flex flex-col w-[100%] md:w-[55%]">
     
     
